@@ -1,6 +1,7 @@
 # potatometabiome_endophytes
-Impact of growing conditions and potato cultivars on the diversity of endophytic microbial communities
-For the analysis of the ITS region (Fungal data set), we used PIPITS. # this script was build by Xiu Jia followed the script from Stefanie Vink. For more details please go to https://github.com/hsgweon/pipits
+#Impact of growing conditions and potato cultivars on the diversity of endophytic microbial communities
+#For the analysis of the ITS region (Fungal data set), we used PIPITS. # this script was build by Xiu Jia followed the script from Stefanie Vink. For more details please go to https://github.com/hsgweon/pipits
+#Create the job file with the script. FastQ_ITS_20220408 is a folder containing the original sequences.
 ######################################################################################################################Submit the job to the cluster#########################################
 #!/bin/sh
 #SBATCH --time=0-48:00:00

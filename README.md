@@ -1,8 +1,8 @@
 # potatometabiome_endophytes
-#Impact of growing conditions and potato cultivars on the diversity of endophytic microbial communities
+# Impact of growing conditions and potato cultivars on the diversity of endophytic microbial communities
 #For the analysis of the ITS region (Fungal data set), we used PIPITS. # this script was build by Xiu Jia followed the script from Stefanie Vink. For more details please go to https://github.com/hsgweon/pipits
 #Create the job file with the script. FastQ_ITS_20220408 is a folder containing the original sequences. Create a output file named ITS for storing tthe files#########################
-######################################################################################################################Submit the job to the cluster#########################################
+# Submit the job to the cluster
 #!/bin/sh
 #SBATCH --time=0-48:00:00
 #SBATCH --nodes=1
@@ -23,7 +23,8 @@ pipits_funits -i /scratch/p312531/ITS/out_seqprep/prepped.fasta -o /scratch/p312
 pipits_process -i /scratch/p312531/ITS/out_funits/ITS.fasta -o /scratch/p312531/ITS/out_process -v -t 8 -l readpairslist.txt
 pipits_funguild.py -i /scratch/p312531/ITS/out_process/otu_table.txt -o /scratch/p312531/ITS/out_process/otu_table_funguild.txt # this converts the otu table into a format that can be used by funguild
 
-###################Qiime command prepared by Jyotsna Nepal for the analysis of bacterial community data/16S of potatoMETAbiome project#######################################Lod bioconda and qiime2 before running the commands below########
+# ##############Qiime command prepared by Jyotsna Nepal for the analysis of bacterial community data/16S of potatoMETAbiome project###########
+###Load bioconda and qiime2 before running the commands below########
 #/zfs/home/user/j/jnepal/qiime2/16S1STPRIORITY/RAWDATA/16SROOTS1STPRIORITY11072022/ is a folder containing the raw sequences##############################
 qiime tools import \
   --type 'SampleData[PairedEndSequencesWithQuality]' \
@@ -228,7 +229,6 @@ qiime metadata tabulate \
 qiime tools export \
   --input-path /zfs/home/user/j/jnepal/qiime2/16S1STPRIORITY/1stpaper16SPL_NL_GER_WORKDIR/filtered-taxonomy.qza \
   --output-path /zfs/home/user/j/jnepal/qiime2/16S1STPRIORITY/1stpaper16SPL_NL_GER_WORKDIR/EXPORTED_TAXONOMYfiltered
-
 
 
 biom convert -i /zfs/home/user/j/jnepal/qiime2/16S1STPRIORITY/1stpaper16SPL_NL_GER_WORKDIR/exported-table-filtered/feature-table.biom -o /zfs/home/user/j/jnepal/qiime2/16S1STPRIORITY/1stpaper16SPL_NL_GER_WORKDIR/exported-table-filtered/feature-table-filtered.tsv --to-tsv

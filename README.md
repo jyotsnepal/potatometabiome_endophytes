@@ -36,7 +36,7 @@ qiime demux summarize \
   --i-data /zfs/home/user/j/jnepal/qiime2/16S1STPRIORITY/1stpaper16SPL_NL_GER_WORKDIR/demux-paired-end.qza \
   --o-visualization /zfs/home/user/j/jnepal/qiime2/16S1STPRIORITY/1stpaper16SPL_NL_GER_WORKDIR/demux-paired-end.qzv
 
-# remove primer seq
+# Remove primer seq
   qiime cutadapt trim-paired \
     --i-demultiplexed-sequences /zfs/home/user/j/jnepal/qiime2/16S1STPRIORITY/1stpaper16SPL_NL_GER_WORKDIR/demux-paired-end.qza \
     --p-cores 16 \
@@ -44,7 +44,7 @@ qiime demux summarize \
     --p-front-r GGACTACNVGGGTWTCTAAT \
     --o-trimmed-sequences /zfs/home/user/j/jnepal/qiime2/16S1STPRIORITY/1stpaper16SPL_NL_GER_WORKDIR/demux-PE-trim-$SOURCE.qza
 
-# visualize trimmed sequences
+# Visualize trimmed sequences
  qiime demux summarize \
     --i-data /zfs/home/user/j/jnepal/qiime2/16S1STPRIORITY/1stpaper16SPL_NL_GER_WORKDIR/demux-PE-trim-$SOURCE.qza \
     --o-visualization /zfs/home/user/j/jnepal/qiime2/16S1STPRIORITY/1stpaper16SPL_NL_GER_WORKDIR/demux-PE-trim-$SOURCE.qzv
@@ -123,18 +123,18 @@ qiime feature-table summarize \
 
 ### Taxonomic analysis ###
 
-# assign taxonomy by silva database
+# Assign taxonomy by silva database
 qiime feature-classifier classify-sklearn \
   --i-classifier /zfs/home/user/j/jnepal/qiime2/16SINVITRO_11GENGRONINGEN_WORKDIR/silva-138-99-515-806-nb-classifier.qza \
   --i-reads /zfs/home/user/j/jnepal/qiime2/16S1STPRIORITY/1stpaper16SPL_NL_GER_WORKDIR/rep-seqs-dna.qza \
   --o-classification /zfs/home/user/j/jnepal/qiime2/16S1STPRIORITY/1stpaper16SPL_NL_GER_WORKDIR/taxonomy.qza
 
-# summerize taxonomy info
+# Summerize taxonomy info
 qiime metadata tabulate \
   --m-input-file /zfs/home/user/j/jnepal/qiime2/16S1STPRIORITY/1stpaper16SPL_NL_GER_WORKDIR/taxonomy.qza \
   --o-visualization /zfs/home/user/j/jnepal/qiime2/16S1STPRIORITY/1stpaper16SPL_NL_GER_WORKDIR/.qzv
 
-# filter feature table
+# Filter feature table
 qiime taxa filter-table \
 --i-table  /zfs/home/user/j/jnepal/qiime2/16S1STPRIORITY/1stpaper16SPL_NL_GER_WORKDIR/table-dna.qza \
 --i-taxonomy /zfs/home/user/j/jnepal/qiime2/16S1STPRIORITY/1stpaper16SPL_NL_GER_WORKDIR/taxonomy.qza \
@@ -234,7 +234,7 @@ qiime tools export \
 biom convert -i /zfs/home/user/j/jnepal/qiime2/16S1STPRIORITY/1stpaper16SPL_NL_GER_WORKDIR/exported-table-filtered/feature-table.biom -o /zfs/home/user/j/jnepal/qiime2/16S1STPRIORITY/1stpaper16SPL_NL_GER_WORKDIR/exported-table-filtered/feature-table-filtered.tsv --to-tsv
 
 
-### generate a phylogenetic tree using the filtered represented sequences ###
+### Generate a phylogenetic tree using the filtered represented sequences
 qiime phylogeny align-to-tree-mafft-fasttree \
   --i-sequences /zfs/home/user/j/jnepal/qiime2/16S1STPRIORITY/1stpaper16SPL_NL_GER_WORKDIR/rep-seqs-with-phyla-no-mitochondria-chloroplasts-archaea-eukaryota.qza  \
   --o-alignment /zfs/home/user/j/jnepal/qiime2/16S1STPRIORITY/1stpaper16SPL_NL_GER_WORKDIR/aligned-rep-seqs.qza \

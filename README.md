@@ -25,7 +25,7 @@ pipits_funguild.py -i /scratch/p312531/ITS/out_process/otu_table.txt -o /scratch
 
 # ##############Qiime command prepared by Jyotsna Nepal for the analysis of bacterial community data/16S of potatoMETAbiome project###########
 ###Load bioconda and qiime2 before running the commands below########
-#/zfs/home/user/j/jnepal/qiime2/16S1STPRIORITY/RAWDATA/16SROOTS1STPRIORITY11072022/ is a folder containing the raw sequences##############################
+#/zfs/home/user/j/jnepal/qiime2/16S1STPRIORITY/RAWDATA/16SROOTS1STPRIORITY11072022/ is a folder containing the raw sequences./zfs/home/user/j/jnepal/qiime2/16S1STPRIORITY/1stpaper16SPL_NL_GER_WORKDIR/ is a directory for the folder to store output files
 qiime tools import \
   --type 'SampleData[PairedEndSequencesWithQuality]' \
   --input-path /zfs/home/user/j/jnepal/qiime2/16S1STPRIORITY/RAWDATA/16SROOTS1STPRIORITY11072022/ \

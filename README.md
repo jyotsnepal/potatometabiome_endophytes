@@ -1,5 +1,6 @@
 # potatometabiome_endophytes
 # Impact of growing conditions and potato cultivars on the diversity of endophytic microbial communities
+#Sequences for this analysis are deposited in (NCBI) Sequence Read Archive (SRA) under the accession number PRJNA1140627
 #For the analysis of the ITS region (Fungal data set), we used PIPITS. # this script was build by Xiu Jia followed the script from Stefanie Vink. For more details please go to https://github.com/hsgweon/pipits
 #Create the job file with the script. FastQ_ITS_20220408 is a folder containing the original sequences. Create a output file named ITS for storing tthe files#########################
 # Submit the job to the cluster

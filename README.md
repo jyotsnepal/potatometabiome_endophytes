@@ -220,7 +220,7 @@ qiime feature-classifier classify-sklearn \
   --o-classification /zfs/home/user/j/jnepal/qiime2/16S1STPRIORITY/1stpaper16SPL_NL_GER_WORKDIR/filtered-taxonomy.qza
 
 
-# summerize taxonomy info
+# Summerize taxonomy info
 qiime metadata tabulate \
   --m-input-file /zfs/home/user/j/jnepal/qiime2/16S1STPRIORITY/1stpaper16SPL_NL_GER_WORKDIR/filtered-taxonomy.qza \
   --o-visualization /zfs/home/user/j/jnepal/qiime2/16S1STPRIORITY/1stpaper16SPL_NL_GER_WORKDIR/filtered-taxonomy.qzv
